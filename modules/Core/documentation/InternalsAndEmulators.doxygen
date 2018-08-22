@@ -1,0 +1,19 @@
+/*!
+@page core-internals_and_emulators Internals and Emulators
+
+@section core-internals_and_emulators-namespaces Namespaces for Internals and Emulators
+All definitions are located in the namespaces CuteVR::Internal and CuteVR::Emulator.
+
+@section core-internals_and_emulators-general Internals and Emulators in General
+These two components of %CuteVR do not come into contact with the user, as at least the name "internal" suggests. The
+internals represent a bridge between %CuteVR and the VR driver. Code that is used multiple times within the library is
+provided through this namespace. Internals include e.g. conversions between data types and query routines.
+@n Emulators are our own implementations of the current VR driver interface, if this is even possible. This enables
+reliable input data for unit tests of driver-related methods and functions.
+
+@section core-internals_and_emulators-usage_advice Use Internals and Emulators in Your Own Code
+A use is not intended. Internals and emulators are pure implementation details of %CuteVR.
+
+@section core-internals_and_emulators-lifetime Expected Lifetime of Internals and Emulators
+Class interfaces may change within a patch level. Internals and emulators are pure implementation details of %CuteVR.
+*/

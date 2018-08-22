@@ -1,0 +1,8 @@
+/*!
+@namespace CuteVR
+@brief Contains the whole interface of the %CuteVR library.
+@details A common abbreviation for the CuteVR namespace is `cvr`.
+@code{.cpp}
+using cvr = CuteVR;
+@endcode
+*/

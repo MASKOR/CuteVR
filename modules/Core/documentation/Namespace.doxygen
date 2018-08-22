@@ -1,0 +1,87 @@
+/*!
+@namespace CuteVR::Configurations
+@brief Contains the configurations and initialization routines of the different modules.
+
+@namespace CuteVR::Components
+@brief Contains all individual components of a typical VR system.
+@details Usually components are grouped together into the sub-namespaces. All components in this namespace inherit
+CuteVR::Component directly or indirectly.
+@see @ref core-systems_devices_and_components
+
+@namespace CuteVR::Components::Geometry
+@brief Contains all components that describe a geometric form.
+@details All components in this namespace inherit from CategorizedComponent<Component::Category::geometry>, so it is
+possible to group several components of this namespace e.g. in a list.
+
+@namespace CuteVR::Components::Input
+@brief Contains all components that are an abstraction of a hardware that is used for user input.
+@details All components in this namespace inherit from CategorizedComponent<Component::Category::input>, so it is
+possible to group several components of this namespace e.g. in a list.
+
+@namespace CuteVR::Components::Interaction
+@brief Contains all components that describe an interaction opportunity with the user himself.
+@details All components in this namespace inherit from CategorizedComponent<Component::Category::interaction>, so it is
+possible to group several components of this namespace e.g. in a list.
+
+@namespace CuteVR::Components::Output
+@brief Contains all components that are an abstraction of a hardware that is used for user output.
+@details All components in this namespace inherit from CategorizedComponent<Component::Category::output>, so it is
+possible to group several components of this namespace e.g. in a list.
+
+@namespace CuteVR::Components::Peripheral
+@brief Contains all components that describe a peripheral device that does not interact with the user directly.
+@details All components in this namespace inherit from CategorizedComponent<Component::Category::peripheral>, so it is
+possible to group several components of this namespace e.g. in a list.
+
+@namespace CuteVR::Components::Sensor
+@brief Contains all components that describe a sensor.
+@details All components in this namespace inherit from CategorizedComponent<Component::Category::sensor>, so it is
+possible to group several components of this namespace e.g. in a list.
+
+@namespace CuteVR::Devices
+@brief Contains all individual devices of a typical VR system.
+@details Usually devices are grouped together into the sub-namespaces. All devices in this namespace inherit
+CuteVR::Device directly or indirectly.
+@see @ref core-systems_devices_and_components
+
+@namespace CuteVR::Devices::TrackingReference
+@brief Contains all devices that describe a reference that is used to track other devices.
+@details All devices in this namespace inherit from CategorizedDevice<Device::Category::trackingReference>, so it is
+possible to group several devices of this namespace e.g. in a list.
+
+@namespace CuteVR::Devices::HeadMountedDisplay
+@brief Contains all devices that describe a head-mounted display.
+@details All devices in this namespace inherit from CategorizedDevice<Device::Category::headMountedDisplay>, so it is
+possible to group several devices of this namespace e.g. in a list.
+
+@namespace CuteVR::Devices::HeadMountedAudio
+@brief Contains all devices that describe a head-mounted audio setup.
+@details All devices in this namespace inherit from CategorizedDevice<Device::Category::headMountedAudio>, so it is
+possible to group several devices of this namespace e.g. in a list.
+
+@namespace CuteVR::Devices::Controller
+@brief Contains all devices that describe a controller.
+@details All devices in this namespace inherit from CategorizedDevice<Device::Category::controller>, so it is possible
+to group several devices of this namespace e.g. in a list.
+
+@namespace CuteVR::Devices::Tracker
+@brief Contains all devices that describe a tracker.
+@details All devices in this namespace inherit from CategorizedDevice<Device::Category::tracker>, so it is possible to
+group several devices of this namespace e.g. in a list.
+
+@namespace CuteVR::Emulator
+@brief Contains custom implementations of VR drivers that are used in unit tests of methods that query data of them.
+@see @ref core-internals_and_emulators
+
+@namespace CuteVR::Extension
+@brief Contains concepts which are not included in the used libraries or will only be available in newer versions.
+@see @ref core-extensions
+
+@namespace CuteVR::Interface
+@brief Contains interface definitions that specify standardized method names and signatures.
+@see @ref core-interfaces
+
+@namespace CuteVR::Internal
+@brief Contains everything that is used shared, but is unavailable in the public library interface.
+@see @ref core-internals_and_emulators
+*/

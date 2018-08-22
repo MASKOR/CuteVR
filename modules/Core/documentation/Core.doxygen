@@ -1,0 +1,82 @@
+/*!
+@page core Core Module
+
+@section core-general General Information
+The core module provides all necessary capabilities to control a VR system in general. It contains on the one hand
+classes for the configuration and instantiation of the driver and on the other hand a so-called system-device-component
+(SDC) concept that allows the user to query the current properties of the VR system and to react to change events.
+Furthermore, this module defines the basic elements and interfaces of the entire library.
+
+@subsection core-general-limitations Limitations
+However, the core module provides only very generic information and relatively few possibilities to interact with a VR
+system. Therefore there are additional modules, which are usually user-configurable and offer interfaces and
+information specialized on various hardware and software.
+
+@section core-pages Further Reading
+- @subpage core-systems_devices_and_components
+- @subpage core-extensions
+- @subpage core-interfaces
+- @subpage core-internals_and_emulators
+- Code documentation to start with
+  - CuteVR::Configuration
+  - CuteVR::Driver
+  - CuteVR::System
+  - CuteVR::Device / CuteVR::Devices
+  - CuteVR::Component / CuteVR::Components
+
+@section core-build_instructions Build Instructions
+Building the Core module is the easiest of all modules because it is always included in the standard configuration.
+@code{.sh}
+cd ~/CuteVR; // ... or wherever you cloned the project to.
+mkdir build;
+cd build;
+cmake ..;
+ccmake .; // ... is optional because the core is always built in.
+make -j;
+(sudo) make install; // ... if you want to install the library.
+@endcode
+
+@section core-usage_instructions Usage Instructions
+The module can be added to your CMake-based project with the following lines of code.
+@code{.cmake}
+find_package(CuteVR REQUIRED COMPONENTS Core)
+target_link_libraries(${TARGET_NAME} CuteVR::Core)
+@endcode
+After that the VR system can be configured, initialized and finally used.
+@code{.cpp}
+using namespace CuteVR;
+// Begin with the configuration so that CuteVR meets your needs.
+ConfigurationServer::enable(feature(Configurations::Core::Feature::tracking));
+ConfigurationServer::enable(feature(Configurations::Core::Feature::events));
+ConfigurationServer::enable(feature(Configurations::Core::Feature::headMountedDisplayGeneric));
+ConfigurationServer::disable(feature(Configurations::Core::Feature::linearAcceleration));
+ConfigurationServer::disable(feature(Configurations::Core::Feature::angularAcceleration));
+ConfigurationServer::setValue(parameter(Configurations::Core::Parameter::zFar), {100.0});
+// ... even more configuration.
+// Then initialize the driver.
+DriverServer::instance().preInitialize({}); // Early detection of error potentials.
+DriverServer::instance().initialize(); // initialize2() will return non-critical exceptions.
+if (DriverServer::instance().isInitialized()) {
+    // Start infinite loop threads for...
+    DriverServer::pollEvents(); // E.g. at 1kHz
+    // ... and also for event-independent changes to the system...
+    DriverServer::runCycle(); // E.g. at 1kHz
+    // ... and possibly tracking, even though it could be done before each rendering...
+    DriverServer::pollTracking(); // E.g. at 100Hz
+    // ... and finally you end up with the system.
+    System system{}
+    system.initialize();
+    if (system.isInitialized()) {
+        bool exit{false};
+        while (!exit) {
+            // To hinder the driver from shutting down, especially between system calls, you should synchronize.
+            DriverServer::synchronized([&exit]() -> void {
+                // using the SDC capabilities
+            });
+        }
+    }
+    system.destroy();
+}
+DriverServer::instance().destroy();
+@endcode
+*/

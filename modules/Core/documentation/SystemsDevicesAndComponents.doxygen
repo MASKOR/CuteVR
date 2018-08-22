@@ -1,0 +1,48 @@
+/*!
+@page core-systems_devices_and_components Systems, Devices and Components
+
+@section core-systems_devices_and_components-namespaces Namespace for Systems, Devices and Components
+All definitions are located in the namespaces CuteVR::Devices and CuteVR::Components. The CuteVR::System is placed in
+the top level namespace.
+
+@section core-systems_devices_and_components-general Systems, Devices and Components in General
+The system-device-component concept (SDC) used in %CuteVR is related to the entity-component-system (ECS) architectural
+pattern known especially from the computer games industry. However, there are some differences, especially regarding
+the responsibility for updates and ownership.
+
+@subsection core-systems_devices_and_components-general-components Components
+With the exception of CuteVR::Components::Description, components behave like plain old data (POD) in the broadest
+sense. All variables are public members and there are no user-defined constructors or destructors. However, the classes
+are actually not PODs because they have virtual methods for equality testing (==, !=), total ordering (>, >=, <, <=),
+serialization (>>, <<), and cloning. In addition, the classes receive static meta information via the Q_GADGET and
+Q_PROPERTY macros.
+
+@subsection core-systems_devices_and_components-general-devices Devices
+Devices consist of an identifier and own several components directly themselves, for which they also implement how
+these are to be updated. In contrast, in many ECSs, the entities are only identifiers and the components are stored in
+centrally organized maps that the different systems can iterate over and update accordingly. So the devices in our SDC
+concept have much more competence than the system(s) or components in an ECS. For example, devices also have signals
+and slots using Q_OBJECT and Q_PROPERTY macros. This transfer of competence is also due to the fact that devices are
+real existing entities, which do not need any things like e.g. an artificial physics system.
+
+@subsection core-systems_devices_and_components-general-systems Systems
+In our SDC concept there is only one system, which on the one hand acts as a central access point for all device
+instances and on the other hand forwards the events and other data of the VR driver to them. There is no distinction
+between different event types by means of different systems. The system in our SDC is therefore only slightly related
+to those systems of a full-grown ECS.
+
+@section core-systems_devices_and_components-usage_advice Use Devices and Components in Your Own Code
+If custom devices or components are required, these should preferably be integrated into CuteVR via the DeviceZeta
+module. There is nothing to prevent the reuse of existing components in custom devices as well as the use of existing
+devices in custom systems. However, with the latter, the automatic registration of device classes at the system should
+be disabled.
+@code{.cpp}
+// Inhibit automatic registration of the generic and vendor-specific devices.
+ConfigurationServer::disable(Configurations::Core::Feature::inhibitDeviceRegistration);
+ConfigurationServer::disable(Configurations::Device::Feature::inhibitDeviceRegistration);
+@endcode
+
+@section core-systems_devices_and_components-lifetime Expected Lifetime of Devices and Components
+Component and device classes usually outlast several major releases until they are marked as legacy and finally
+deactivated in the following release.
+*/

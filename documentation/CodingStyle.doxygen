@@ -1,0 +1,58 @@
+/*!
+@page coding_style Coding Style
+
+@section coding_style-files File Naming and Placement
+Pascal case is used for all file types, except those which explicitly require an exact naming scheme. Files are stored
+in the respective module folder and there they are placed in a folder structure that is equivalent to the namespace of
+the contained class. In the source and test folder the actually existing CuteVR namespace is omitted. Tests receive a
+"Test" suffix at the end of the file name.
+
+@subsection coding_style-files-directories Directories
+- modules/[Module]/include/CuteVR/[Namespace] for public accessible header files
+- modules/[Module]/include/CuteVR/Internal for header files that are accessible by other modules
+- modules/[Module]/source/[Namespace] for source files
+- modules/[Module]/test/[Namespace] for unit tests
+
+@subsection coding_style-files-file_extensions File Extensions
+- *.hpp for C++ headers
+- *.cpp for C++ sources
+- *.doxygen for pure documentation files
+
+@subsection coding_style-files-example Example
+The files related to the class CuteVR::Components::Description are named and placed as follows.
+- modules/Core/include/CuteVR/Components/Description.hpp
+- modules/Core/source/Components/Description.cpp
+- modules/Core/test/Components/DescriptionTest.cpp
+
+@section coding_style-formatting Code Formatting
+Coming soon...
+
+@section coding_style-version_control_system Version Control System
+Coming soon...
+
+@section coding_style-guidelines Guidelines
+The guidelines for this library are based on the
+<a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines">C++ Core Guidelines</a> by Bjarne Stroustrup and
+Herb Sutter. However, there are some exceptions.
+
+@subsection coding_style-guidelines-exceptions Exceptions
+- C.5: Place helper functions in the same namespace as the class they support
+- C.7: Don’t define a class or enum and declare a variable of its type in the same statement
+- NL.10: Prefer underscore_style names
+- NL.18: Use C++-style declarator layout
+- NL.26: Use conventional const notation
+
+@subsection coding_style-guidelines-violations Violations
+Further violations of these guidelines are welcome to be reported or resolved.
+- I.3: Avoid singletons
+  - CuteVR::Configuration
+  - CuteVR::Device
+  - CuteVR::System
+- C.100: Follow the STL when defining a container
+  - CuteVR::Extension::Either
+  - CuteVR::Extension::Optional
+- C.139: Use final sparingly
+  - more or less all classes in CuteVR::Components and CuteVR::Devices
+- Enum.6: Avoid unnamed enumerations
+  - CuteVR::Configuration
+*/

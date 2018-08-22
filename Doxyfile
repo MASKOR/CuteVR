@@ -1,0 +1,90 @@
+# Doxygen version 1.8.14
+
+#----------------------#
+# Project              #
+#----------------------#
+PROJECT_NAME           = CuteVR
+PROJECT_NUMBER         = 0.8.0-beta
+PROJECT_BRIEF          =
+PROJECT_LOGO           =
+OUTPUT_DIRECTORY       = ./doxygen-output
+OUTPUT_LANGUAGE        = English
+ALWAYS_DETAILED_SEC    = YES
+ALIASES                = default="@brief Method definition explicitly specified as default." \
+                         setter{1}="@brief A simple setter to change the value of the \1. @param \1 The new value for \1." \
+                         getter{1}="@brief A simple getter to fetch the value of the \1. @return The value of \1." \
+                         reset{1}="@brief A simple reset to restore the default value of the \1." \
+                         signal{1}="@brief A signal that is fired as soon as the \1 has changed. @see \1." \
+                         equality{1}="@brief Checks if the two given \1 are equal." \
+                         inequality{1}="@brief Checks if the two given \1 are not equal." \
+                         istream{1}="@brief Extracts the values from the input stream into the \1." \
+                         ostream{1}="@brief Inserts the values of the \1 into the output stream." \
+                         copyassign="@brief Assigns another object of the same class to this object by copying its values. @param other Object to copy from. @return The object that has been copied into." \
+                         copyconstruct="@brief Creates an object by copying the values of another object of the same class. @param other Object to copy from." \
+                         moveassign="@brief Assigns another object of the same class to this object by moving its values. @param other Other object to move from. @return The object that has been moved into." \
+                         moveconstruct="@brief Creates an object by moving the values of another object of the same class. @param other Other object to move from."
+IDL_PROPERTY_SUPPORT   = NO
+STRIP_FROM_INC_PATH    = ./modules/Core/include/ \
+                         ./modules/Audio/include/ \
+                         ./modules/AudioZeta/include/ \
+                         ./modules/Devices/include/ \
+                         ./modules/DevicesZeta/include/ \
+                         ./modules/Input/include/ \
+                         ./modules/InputZeta/include/ \
+                         ./modules/Render/include/ \
+                         ./modules/RenderZeta/include/ \
+                         ./modules/Video/include/ \
+                         ./modules/VideoZeta/include/
+
+#----------------------#
+# Build                #
+#----------------------#
+INTERNAL_DOCS          = YES
+SORT_MEMBER_DOCS       = NO
+
+#----------------------#
+# Input                #
+#----------------------#
+INPUT                  = documentation \
+                         examples \
+                         modules
+FILE_PATTERNS          = *.cpp \
+                         *.hpp \
+                         *.doxygen \
+                         *.md
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */test/*
+EXCLUDE_SYMBOLS        = Private \
+                         _private
+
+#----------------------#
+# Source browser       #
+#----------------------#
+VERBATIM_HEADERS       = NO
+
+#----------------------#
+# Html                 #
+#----------------------#
+HTML_OUTPUT            = .
+
+#----------------------#
+# Latex                #
+#----------------------#
+GENERATE_LATEX         = NO
+
+#----------------------#
+# Preprocessor         #
+#----------------------#
+MACRO_EXPANSION        = YES
+PREDEFINED             = DOXYRUN \
+                         DOXYLIE(hide,show)=show \
+                         ARG=
+EXPAND_ONLY_PREDEF     = YES
+
+#----------------------#
+# Dot                  #
+#----------------------#
+HIDE_UNDOC_RELATIONS   = NO
+HAVE_DOT               = YES
+UML_LOOK               = YES
+CLASS_GRAPH            = NO

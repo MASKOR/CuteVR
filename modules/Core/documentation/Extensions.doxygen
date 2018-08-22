@@ -1,0 +1,21 @@
+/*!
+@page core-extensions Extensions
+
+@section core-extensions-namespace Namespace for Extensions
+All extensions are located in the CuteVR::Extension namespace.
+
+@section core-extensions-general Extensions in General
+Extensions, as the name suggests, extend the used libraries by concepts that are used within
+%CuteVR. Extensions generally serve to simplify and clarify the interface.
+
+@section core-extensions-usage_advice Use Extensions in Your Own Code
+We explicitly advise against the use of any of these classes in your own project, except of course
+to use the %CuteVR interface. The extensions are designed exactly for the needs of this library and
+are not universally applicable, such as implementation of the standard template library are.
+
+@section core-extensions-lifetime Expected Lifetime of Extensions
+The used concepts are provided by us as long as they are not offered by third parties whose libraries we are already
+using or plan to use. Before the implementation of the next major release, the used standards and libraries and their
+target versions are selected and obsolete extensions are removed, as long as the alternative has sufficient
+functionality.
+*/
