@@ -15,6 +15,7 @@ set(_SOURCES
     ./source/Extension/Trilean.cpp)
 set(_TESTS
     ./test/Extension/CuteExceptionTest.cpp
+    ./test/Extension/EitherTest.cpp
     ./test/Extension/OptionalTest.cpp
     ./test/Extension/TrileanTest.cpp)
 
