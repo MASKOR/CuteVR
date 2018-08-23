@@ -10,8 +10,10 @@ cpack_add_component(Core REQUIRED
         GROUP Library)
 
 # collect sources
-set(_SOURCES)
-set(_TESTS)
+set(_SOURCES
+    ./source/Extension/Trilean.cpp)
+set(_TESTS
+    ./test/Extension/TrileanTest.cpp)
 
 # create module
 add_library(Core SHARED "") # LEGACY: CMake 3.10 requires source files
