@@ -11,8 +11,10 @@ cpack_add_component(Core REQUIRED
 
 # collect sources
 set(_SOURCES
+    ./source/Extension/CuteException.cpp
     ./source/Extension/Trilean.cpp)
 set(_TESTS
+    ./test/Extension/CuteExceptionTest.cpp
     ./test/Extension/TrileanTest.cpp)
 
 # create module
