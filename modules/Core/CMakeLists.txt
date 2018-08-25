@@ -26,6 +26,7 @@ set(_TESTS
     ./test/Internal/Matrix3x3Test.cpp
     ./test/Internal/Matrix3x4Test.cpp
     ./test/Internal/Matrix4x4Test.cpp
+    ./test/Internal/PropertyTest.cpp
     ./test/Internal/QuaternionTest.cpp
     ./test/Internal/Vector2Test.cpp
     ./test/Internal/Vector3Test.cpp
