@@ -12,7 +12,8 @@ cpack_add_component(Core REQUIRED
 # collect sources
 set(_SOURCES
     ./source/Extension/CuteException.cpp
-    ./source/Extension/Trilean.cpp)
+    ./source/Extension/Trilean.cpp
+    ./source/Identifier.cpp)
 set(_TESTS
     ./test/Extension/CuteExceptionTest.cpp
     ./test/Extension/EitherTest.cpp
