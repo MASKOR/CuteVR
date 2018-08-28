@@ -14,6 +14,7 @@ set(_SOURCES
     ./source/Configurations/Core.cpp
     ./source/Extension/CuteException.cpp
     ./source/Extension/Trilean.cpp
+    ./source/Component.cpp
     ./source/ConfigurationServer.cpp
     ./source/DriverServer.cpp
     ./source/Identifier.cpp)
@@ -31,6 +32,7 @@ set(_TESTS
     ./test/Internal/Vector2Test.cpp
     ./test/Internal/Vector3Test.cpp
     ./test/Internal/Vector4Test.cpp
+    ./test/ComponentTest.cpp
     ./test/ConfigurationServerTest.cpp)
 
 # create module
