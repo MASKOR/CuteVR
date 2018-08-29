@@ -13,6 +13,7 @@ cpack_add_component(Core REQUIRED
 set(_SOURCES
     ./source/Components/Availability.cpp
     ./source/Components/Description.cpp
+    ./source/Components/Pose.cpp
     ./source/Configurations/Core.cpp
     ./source/Extension/CuteException.cpp
     ./source/Extension/Trilean.cpp
@@ -23,6 +24,7 @@ set(_SOURCES
 set(_TESTS
     ./test/Components/AvailabilityTest.cpp
     ./test/Components/DescriptionTest.cpp
+    ./test/Components/PoseTest.cpp
     ./test/Extension/CuteExceptionTest.cpp
     ./test/Extension/EitherTest.cpp
     ./test/Extension/OptionalTest.cpp
