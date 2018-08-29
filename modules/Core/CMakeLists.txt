@@ -15,6 +15,7 @@ set(_SOURCES
     ./source/Components/Geometry/Cuboid.cpp
     ./source/Components/Geometry/Sphere.cpp
     ./source/Components/Input/Axis.cpp
+    ./source/Components/Input/Button.cpp
     ./source/Components/Availability.cpp
     ./source/Components/Description.cpp
     ./source/Components/Pose.cpp
@@ -30,6 +31,7 @@ set(_TESTS
     ./test/Components/Geometry/CuboidTest.cpp
     ./test/Components/Geometry/SphereTest.cpp
     ./test/Components/Input/AxisTest.cpp
+    ./test/Components/Input/ButtonTest.cpp
     ./test/Components/AvailabilityTest.cpp
     ./test/Components/DescriptionTest.cpp
     ./test/Components/PoseTest.cpp
