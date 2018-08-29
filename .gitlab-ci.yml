@@ -1,11 +1,11 @@
 image: ubuntu:16.04
 
 before_script:
-  - apt-get update
-  - apt-get install -y gcc g++ cmake qtbase5-dev git
-  - git clone https://github.com/ValveSoftware/openvr.git
-  - cp openvr/lib/linux64/libopenvr_api.so /usr/lib
-  - cp -ra openvr/headers/. /usr/include
+- apt-get update
+- apt-get install -y gcc g++ cmake qtbase5-dev git
+- git clone https://github.com/ValveSoftware/openvr.git
+- cp openvr/lib/linux64/libopenvr_api.so /usr/lib
+- cp -ra openvr/headers/. /usr/include
 
 compile:
   script:
@@ -13,3 +13,15 @@ compile:
   - cd build
   - cmake ..
   - make
+
+pages:
+  script:
+  - apt-get update
+  - apt-get install -y doxygen graphviz
+  - doxygen ./Doxyfile
+  - mv ./doxygen-output/ public/
+  artifacts:
+    paths:
+    - public
+  only:
+  - staging # TODO: change to master after staging is complete
