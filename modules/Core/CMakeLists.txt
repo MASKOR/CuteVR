@@ -20,6 +20,7 @@ set(_SOURCES
     ./source/Components/Interaction/Eye.cpp
     ./source/Components/Interaction/Hand.cpp
     ./source/Components/Output/Display.cpp
+    ./source/Components/Peripheral/Battery.cpp
     ./source/Components/Availability.cpp
     ./source/Components/Description.cpp
     ./source/Components/Pose.cpp
@@ -40,6 +41,7 @@ set(_TESTS
     ./test/Components/Interaction/EyeTest.cpp
     ./test/Components/Interaction/HandTest.cpp
     ./test/Components/Output/DisplayTest.cpp
+    ./test/Components/Peripheral/BatteryTest.cpp
     ./test/Components/AvailabilityTest.cpp
     ./test/Components/DescriptionTest.cpp
     ./test/Components/PoseTest.cpp
