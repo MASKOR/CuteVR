@@ -23,6 +23,7 @@ set(_SOURCES
     ./source/Components/Peripheral/Battery.cpp
     ./source/Components/Peripheral/Camera.cpp
     ./source/Components/Sensor/Accelerometer.cpp
+    ./source/Components/Sensor/Gyroscope.cpp
     ./source/Components/Availability.cpp
     ./source/Components/Description.cpp
     ./source/Components/Pose.cpp
@@ -46,6 +47,7 @@ set(_TESTS
     ./test/Components/Peripheral/BatteryTest.cpp
     ./test/Components/Peripheral/CameraTest.cpp
     ./test/Components/Sensor/AccelerometerTest.cpp
+    ./test/Components/Sensor/GyroscopeTest.cpp
     ./test/Components/AvailabilityTest.cpp
     ./test/Components/DescriptionTest.cpp
     ./test/Components/PoseTest.cpp
