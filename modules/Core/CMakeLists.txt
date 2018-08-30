@@ -25,6 +25,7 @@ set(_SOURCES
     ./source/Components/Sensor/Accelerometer.cpp
     ./source/Components/Sensor/Gyroscope.cpp
     ./source/Components/Sensor/Magnetometer.cpp
+    ./source/Components/Sensor/Proximity.cpp
     ./source/Components/Availability.cpp
     ./source/Components/Description.cpp
     ./source/Components/Pose.cpp
@@ -50,6 +51,7 @@ set(_TESTS
     ./test/Components/Sensor/AccelerometerTest.cpp
     ./test/Components/Sensor/GyroscopeTest.cpp
     ./test/Components/Sensor/MagnetometerTest.cpp
+    ./test/Components/Sensor/ProximityTest.cpp
     ./test/Components/AvailabilityTest.cpp
     ./test/Components/DescriptionTest.cpp
     ./test/Components/PoseTest.cpp
