@@ -11,6 +11,7 @@ cpack_add_component(Core REQUIRED
 
 # collect sources
 set(_SOURCES
+    ./source/Components/Availability.cpp
     ./source/Configurations/Core.cpp
     ./source/Extension/CuteException.cpp
     ./source/Extension/Trilean.cpp
@@ -19,6 +20,7 @@ set(_SOURCES
     ./source/DriverServer.cpp
     ./source/Identifier.cpp)
 set(_TESTS
+    ./test/Components/AvailabilityTest.cpp
     ./test/Extension/CuteExceptionTest.cpp
     ./test/Extension/EitherTest.cpp
     ./test/Extension/OptionalTest.cpp
