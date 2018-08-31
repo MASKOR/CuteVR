@@ -18,6 +18,7 @@ set(_SOURCES
     ./source/Components/Input/Button.cpp
     ./source/Components/Interaction/Activity.cpp
     ./source/Components/Interaction/Eye.cpp
+    ./source/Components/Interaction/Hand.cpp
     ./source/Components/Availability.cpp
     ./source/Components/Description.cpp
     ./source/Components/Pose.cpp
@@ -36,6 +37,7 @@ set(_TESTS
     ./test/Components/Input/ButtonTest.cpp
     ./test/Components/Interaction/ActivityTest.cpp
     ./test/Components/Interaction/EyeTest.cpp
+    ./test/Components/Interaction/HandTest.cpp
     ./test/Components/AvailabilityTest.cpp
     ./test/Components/DescriptionTest.cpp
     ./test/Components/PoseTest.cpp
