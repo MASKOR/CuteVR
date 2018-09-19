@@ -11,6 +11,7 @@ cpack_add_component(Core REQUIRED
 
 # collect sources
 set(_SOURCES
+    ./source/Components/Geometry/Cube.cpp
     ./source/Components/Availability.cpp
     ./source/Components/Description.cpp
     ./source/Components/Pose.cpp
@@ -22,6 +23,7 @@ set(_SOURCES
     ./source/DriverServer.cpp
     ./source/Identifier.cpp)
 set(_TESTS
+    ./test/Components/Geometry/CubeTest.cpp
     ./test/Components/AvailabilityTest.cpp
     ./test/Components/DescriptionTest.cpp
     ./test/Components/PoseTest.cpp
