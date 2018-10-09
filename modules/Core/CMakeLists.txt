@@ -42,6 +42,7 @@ set(_SOURCES
     ./source/Internal/DefaultPoseProvider.cpp
     ./source/Component.cpp
     ./source/ConfigurationServer.cpp
+    ./source/Device.cpp
     ./source/DriverServer.cpp
     ./source/Identifier.cpp)
 set(_TESTS
@@ -85,7 +86,8 @@ set(_TESTS
     ./test/Internal/Vector3Test.cpp
     ./test/Internal/Vector4Test.cpp
     ./test/ComponentTest.cpp
-    ./test/ConfigurationServerTest.cpp)
+    ./test/ConfigurationServerTest.cpp
+    ./test/DeviceTest.cpp)
 
 # create module
 add_library(Core SHARED "") # LEGACY: CMake 3.10 requires source files
