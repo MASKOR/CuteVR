@@ -50,7 +50,8 @@ set(_SOURCES
     ./source/Device.cpp
     ./source/DeviceServer.cpp
     ./source/DriverServer.cpp
-    ./source/Identifier.cpp)
+    ./source/Identifier.cpp
+    ./source/System.cpp)
 set(_TESTS
     ./test/Components/Geometry/CubeTest.cpp
     ./test/Components/Geometry/CuboidTest.cpp
@@ -98,7 +99,8 @@ set(_TESTS
     ./test/Internal/Vector4Test.cpp
     ./test/ComponentTest.cpp
     ./test/ConfigurationServerTest.cpp
-    ./test/DeviceTest.cpp)
+    ./test/DeviceTest.cpp
+    ./test/SystemTest.cpp)
 
 # create module
 add_library(Core SHARED "") # LEGACY: CMake 3.10 requires source files
