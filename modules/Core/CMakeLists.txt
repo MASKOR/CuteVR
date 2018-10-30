@@ -33,6 +33,7 @@ set(_SOURCES
     ./source/Devices/Controller/Generic.cpp
     ./source/Devices/HeadMountedDisplay/Generic.cpp
     ./source/Devices/Tracker/Generic.cpp
+    ./source/Devices/TrackingReference/Generic.cpp
     ./source/Devices/TrackedDevice.cpp
     ./source/Extension/CuteException.cpp
     ./source/Extension/Trilean.cpp
@@ -72,6 +73,7 @@ set(_TESTS
     ./test/Devices/Controller/GenericTest.cpp
     ./test/Devices/HeadMountedDisplay/GenericTest.cpp
     ./test/Devices/Tracker/GenericTest.cpp
+    ./test/Devices/TrackingReference/GenericTest.cpp
     ./test/Devices/TrackedDeviceTest.cpp
     ./test/Extension/CuteExceptionTest.cpp
     ./test/Extension/EitherTest.cpp
