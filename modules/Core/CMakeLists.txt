@@ -30,6 +30,7 @@ set(_SOURCES
     ./source/Components/Description.cpp
     ./source/Components/Pose.cpp
     ./source/Configurations/Core.cpp
+    ./source/Devices/Controller/Generic.cpp
     ./source/Devices/TrackedDevice.cpp
     ./source/Extension/CuteException.cpp
     ./source/Extension/Trilean.cpp
@@ -66,6 +67,7 @@ set(_TESTS
     ./test/Components/AvailabilityTest.cpp
     ./test/Components/DescriptionTest.cpp
     ./test/Components/PoseTest.cpp
+    ./test/Devices/Controller/GenericTest.cpp
     ./test/Devices/TrackedDeviceTest.cpp
     ./test/Extension/CuteExceptionTest.cpp
     ./test/Extension/EitherTest.cpp
