@@ -26,6 +26,7 @@ set(_TESTS
     ./test/Internal/Matrix3x3Test.cpp
     ./test/Internal/Matrix3x4Test.cpp
     ./test/Internal/Matrix4x4Test.cpp
+    ./test/Internal/QuaternionTest.cpp
     ./test/ConfigurationServerTest.cpp)
 
 # create module
