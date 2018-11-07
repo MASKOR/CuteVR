@@ -22,6 +22,7 @@ set(_TESTS
     ./test/Extension/EitherTest.cpp
     ./test/Extension/OptionalTest.cpp
     ./test/Extension/TrileanTest.cpp
+    ./test/Internal/ColorTest.cpp
     ./test/ConfigurationServerTest.cpp)
 
 # create module
