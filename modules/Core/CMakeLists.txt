@@ -39,6 +39,7 @@ set(_SOURCES
     ./source/Internal/DefaultDisplaysProvider.cpp
     ./source/Internal/DefaultEyesProvider.cpp
     ./source/Internal/DefaultHandsProvider.cpp
+    ./source/Internal/DefaultPoseProvider.cpp
     ./source/Component.cpp
     ./source/ConfigurationServer.cpp
     ./source/DriverServer.cpp
@@ -74,6 +75,7 @@ set(_TESTS
     ./test/Internal/DefaultDisplaysProviderTest.cpp
     ./test/Internal/DefaultEyesProviderTest.cpp
     ./test/Internal/DefaultHandsProviderTest.cpp
+    ./test/Internal/DefaultPoseProviderTest.cpp
     ./test/Internal/Matrix3x3Test.cpp
     ./test/Internal/Matrix3x4Test.cpp
     ./test/Internal/Matrix4x4Test.cpp
