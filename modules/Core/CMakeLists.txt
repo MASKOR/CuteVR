@@ -35,6 +35,7 @@ set(_SOURCES
     ./source/Internal/DefaultAvailabilityProvider.cpp
     ./source/Internal/DefaultAxesProvider.cpp
     ./source/Internal/DefaultButtonsProvider.cpp
+    ./source/Internal/DefaultDescriptionsProvider.cpp
     ./source/Component.cpp
     ./source/ConfigurationServer.cpp
     ./source/DriverServer.cpp
@@ -66,6 +67,7 @@ set(_TESTS
     ./test/Internal/DefaultAvailabilityProviderTest.cpp
     ./test/Internal/DefaultAxesProviderTest.cpp
     ./test/Internal/DefaultButtonsProviderTest.cpp
+    ./test/Internal/DefaultDescriptionsProviderTest.cpp
     ./test/Internal/Matrix3x3Test.cpp
     ./test/Internal/Matrix3x4Test.cpp
     ./test/Internal/Matrix4x4Test.cpp
