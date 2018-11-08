@@ -32,6 +32,7 @@ set(_SOURCES
     ./source/Configurations/Core.cpp
     ./source/Extension/CuteException.cpp
     ./source/Extension/Trilean.cpp
+    ./source/Internal/DefaultAvailabilityProvider.cpp
     ./source/Component.cpp
     ./source/ConfigurationServer.cpp
     ./source/DriverServer.cpp
@@ -60,6 +61,7 @@ set(_TESTS
     ./test/Extension/OptionalTest.cpp
     ./test/Extension/TrileanTest.cpp
     ./test/Internal/ColorTest.cpp
+    ./test/Internal/DefaultAvailabilityProviderTest.cpp
     ./test/Internal/Matrix3x3Test.cpp
     ./test/Internal/Matrix3x4Test.cpp
     ./test/Internal/Matrix4x4Test.cpp
