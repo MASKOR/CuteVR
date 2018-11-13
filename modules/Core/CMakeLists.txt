@@ -11,6 +11,7 @@ cpack_add_component(Core REQUIRED
 
 # collect sources
 set(_SOURCES
+    ./source/Configurations/Core.cpp
     ./source/Extension/CuteException.cpp
     ./source/Extension/Trilean.cpp
     ./source/ConfigurationServer.cpp
