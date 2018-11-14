@@ -15,6 +15,7 @@ set(_SOURCES
     ./source/Extension/CuteException.cpp
     ./source/Extension/Trilean.cpp
     ./source/ConfigurationServer.cpp
+    ./source/DriverServer.cpp
     ./source/Identifier.cpp)
 set(_TESTS
     ./test/Extension/CuteExceptionTest.cpp
