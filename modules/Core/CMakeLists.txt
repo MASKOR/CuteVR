@@ -43,6 +43,7 @@ set(_SOURCES
     ./source/Component.cpp
     ./source/ConfigurationServer.cpp
     ./source/Device.cpp
+    ./source/DeviceServer.cpp
     ./source/DriverServer.cpp
     ./source/Identifier.cpp)
 set(_TESTS
