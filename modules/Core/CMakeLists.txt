@@ -29,6 +29,7 @@ set(_TESTS
     ./test/Internal/QuaternionTest.cpp
     ./test/Internal/Vector2Test.cpp
     ./test/Internal/Vector3Test.cpp
+    ./test/Internal/Vector4Test.cpp
     ./test/ConfigurationServerTest.cpp)
 
 # create module
