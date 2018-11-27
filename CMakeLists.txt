@@ -125,3 +125,7 @@ endif ()
 
 # create target to uninstall the package
 add_custom_target(uninstall COMMAND ${CMAKE_COMMAND} -P ${CMAKE_SOURCE_DIR}/cmake/PackageUninstallation.cmake)
+
+# add the target directories
+message(STATUS "******* Modules  *******")
+add_subdirectory(./modules ${CMAKE_CURRENT_BINARY_DIR}/CuteVR)
