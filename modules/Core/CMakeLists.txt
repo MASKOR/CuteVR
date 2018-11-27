@@ -13,12 +13,14 @@ cpack_add_component(Core REQUIRED
 set(_SOURCES
     ./source/Extension/CuteException.cpp
     ./source/Extension/Trilean.cpp
+    ./source/ConfigurationServer.cpp
     ./source/Identifier.cpp)
 set(_TESTS
     ./test/Extension/CuteExceptionTest.cpp
     ./test/Extension/EitherTest.cpp
     ./test/Extension/OptionalTest.cpp
-    ./test/Extension/TrileanTest.cpp)
+    ./test/Extension/TrileanTest.cpp
+    ./test/ConfigurationServerTest.cpp)
 
 # create module
 add_library(Core SHARED "") # LEGACY: CMake 3.10 requires source files
