@@ -1,0 +1,23 @@
+/*!
+@mainpage %CuteVR Documentation
+@tableofcontents
+
+@section main_page-introduction Introduction
+Coming soon...
+
+@section main_page-general_links General Topics
+- @ref faq
+- @ref coding_style
+- @ref concepts
+- @ref steam_vr
+
+@section main_page-module_links Module Documentation
+- @ref core
+
+@section main_page-links Links
+- <a href="https://gitlab.com/cutevr/CuteVR">CuteVR on GitLab</a>
+- <a href="https://github.com/marsmee/CuteVR">CuteVR on GitHub</a>
+
+@section main_page-installation Installation
+Coming soon...
+*/
