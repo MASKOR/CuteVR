@@ -1,0 +1,96 @@
+/*!
+@page steam_vr Using a SteamVR- & OpenVR-based %CuteVR
+@tableofcontents
+
+@section steam_vr-installation Installation
+
+@subsection steam_vr-installation-end_user Installation of SteamVR for End Users
+1. Create a Steam account <a href="https://store.steampowered.com/join">here (external link)</a>.
+2. Install the official Steam client for Linux.
+  - Arch Linux
+    @code{.sh}
+    pacman -Sy steam # requires that "multilib" is enabled
+    pacman -Sy steam-runtime # this is optional
+    @endcode
+  - Ubuntu/Debian
+    @code{.sh}
+    apt update
+    apt install steam
+    @endcode
+  - Instructions for other Linux distributions can be found
+    <a href="https://developer.valvesoftware.com/wiki/Steam_under_Linux">here (external link)</a>.
+  - An official `.deb` package can be downloaded from
+    <a href="https://steamcdn-a.akamaihd.net/client/installer/steam.deb">here (external link)</a>.
+3. Install SteamVR from <a href="steam://run/250820">here (link opens in Steam client)</a> or alternatively search for
+   "SteamVR" directly in the Steam client under "Library" &rarr; "Tools".
+4. (Optional) Subscribe to beta releases by opening the context menu of the "SteamVR" entry, navigate to "Properties"
+   &rarr; "BETAS" tab and finally select one of the beta options.
+
+@subsection steam_vr-installation-developer Installation for Developers
+1. Install SteamVR as described in @ref steam_vr-installation-end_user.
+2. Install the OpenVR SDK.
+   - Arch Linux
+     @code{.sh}
+     git clone https://aur.archlinux.org/openvr-git.git
+     cd openvr-git
+     makepkg -si
+     # or use one of the various AUR-helpers like pikaur
+     pikaur -S openvr-git
+     @endcode
+   - Other Linux distributions:
+     @code{.sh}
+     git clone https://github.com/ValveSoftware/openvr.git
+     cd openvr
+     make install
+     cp lib/linux64/libopenvr_api.so /usr/local/lib # destination depends on distribution
+     @endcode
+3. (Optional) Check out <a href="https://github.com/ValveSoftware/SteamVR-for-Linux/blob/master/README.md">this page
+   (external link)</a> for more information.
+4. (Optional) Make a CMake find_package() script available, e.g. the one delivered with CuteVR.
+   @code{.sh}
+   cp [..]/cmake/FindOpenVR.cmake /usr/local/lib/cmake # destination depends on distribution
+   @endcode
+
+@subsection steam_vr-installation-hardware_setup Hardware Setup
+
+@subsubsection steam_vr-installation-hardware_setup-vive HTC Vive
+<a href="https://support.steampowered.com/kb_article.php?ref=2001-UXCM-4439">Installation Guide (external link)</a>
+
+@section steam_vr-start Start SteamVR
+If your application requires drawing on an HMD, the SteamVR Monitor will start as soon as the driver initializes.
+@code{.cpp}
+CuteVR::ConfigurationServer::enable(CuteVR::Configurations::Core::Feature::drawing);
+CuteVR::DriverServer::instance().initialize();
+@endcode
+Otherwise the application runs in background mode, in which it cannot start the SteamVR Monitor itself. A separate
+application with enabled drawing is required and must be started first. Alternatively, the user can start the SteamVR
+Monitor manually by clicking on the VR icon in the upper right corner of the Steam client. Use the driver
+pre-initialization to verify that the initialization is safe.
+@code{.cpp}
+CuteVR::DriverServer::instance().preInitialize();
+@endcode
+
+@section steam_vr-special_use_cases Special Use Cases
+@subsection steam_vr-special_use_case-no_hmd Testing Without a Connected Head-Mounted Display
+By default SteamVR requires you to attach an HMD to use SteamVR. If you only want to test your rendering e.g. to detect
+performance issues, you can use a so called "null" device which displays the rendering directly on the computer screen.
+1. Locate and open `~/.steam/steam/steamapps/common/SteamVR/drivers/null/resources/settings/default.vrsettings`.
+2. Search for `enable` and change its value to `true`.
+3. Save and close the file.
+4. Restart SteamVR.
+
+@subsection steam_vr-special_use_cases-tracker_only_setup Operate a Tracker-only Setup
+By default SteamVR requires you to attach an HMD to use SteamVR, regardless you want to render anything. If you only
+want to use some trackers, e.g. for a self locating robot, you can loose this requirement.
+1. Locate and open `~/.steam/steam/steamapps/common/SteamVR/resources/settings/default.vrsettings`.
+2. Search for `requireHmd` in the `steamvr` section and change its value to `false`.
+3. Save and close the file.
+4. Restart SteamVR.
+
+@subsection steam_vr-special_use_case-mix_null_and_tracker Mix a Tracker-only Setup and Rendering to the Null Device
+1. Performs steps 1.-3. of @ref steam_vr-special_use_case-no_hmd
+2. Performs steps 1.-2. of @ref steam_vr-special_use_cases-tracker_only_setup
+3. Search for `activateMultipleDrivers` in the `steamvr` section and change its value to `true`.
+4. Search for `forcedDriver` in the `steamvr` section and change its value to `null`.
+5. Performs steps 3.-4. of @ref steam_vr-special_use_cases-tracker_only_setup
+*/
