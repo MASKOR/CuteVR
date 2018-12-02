@@ -1,0 +1,37 @@
+/*!
+@page core-interfaces Interfaces
+
+@section core-interface-namespace Namespace for Interfaces
+All interfaces are located in the namespace CuteVR::Interface.
+
+@section core-interface-general Interfaces in General
+The interface classes are all pure abstract interface definitions that cover exactly one single domain. They have no
+variables, i.e. no implicit state, and usually no implementations, although the Barton-Nackman trick, for example, is
+an exception for this.
+
+@section core-interface-usage_advice Use Interfaces in Your Own Code
+The interfaces are kept very general and have, if at all, only dependencies to Qt data types. The interfaces can
+therefore be reused in your own code. Some of the interfaces are based on the respective Java equivalent.
+
+@section core-interface-lifetime Expected Lifetime of Interfaces
+A change and especially the removal of an interface from the library must not be expected for several major releases.
+As with the extensions, newer versions of the libraries already used may offer alternative interfaces that might be
+used in the next major release.
+
+@section core-interface-multiple_inheritance Interfaces and Multiple Inheritance
+Multiple inheritance of concrete classes does barely occur in %CuteVR, an exception to this is the component
+CuteVR::Components::Description, for example. However, most classes inherit directly or indirectly from multiple
+interfaces, which causes a slight overhead of pointers to virtual base classes, but leads to clean class interfaces.
+
+@section core-interface-interface_limitations Interface Limitations (Related to Qt)
+
+@subsection core-interface-interface_limitations-generic_signature Generic Function Signatures
+The precision of generic function signatures (through template interfaces) cannot cope with larger inheritance
+hierarchies without the specialization moving further and further away from the basic data types. Alternatively, the
+specializations would also have to inherit from the generic interface and then overload the interface twice with
+different signatures. There is currently no solution known to us to solve this problem.
+
+@subsection core-interface-interface_limitations-q_object_inheritance Multiple Inheritance and QObject
+One problem with interfaces is that they cannot inherit from QObject due to more or less unavoidable multiple
+inheritance. Therefore they cannot use the advantages of the property system.
+*/
