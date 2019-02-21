@@ -18,7 +18,8 @@ Coming soon...
 * Marcus Meeßen &mdash; Initial work &mdash; [GitLab](https://gitlab.com/marsmee) / [GitHub](https://github.com/marsmee)
 
 #### Acknowledgments
-Coming soon...
+* This project was partially funded in 2018 by the German Federal Ministry of Education and Research (Bundesministerium
+  für Bildung und Forschung, BMBF) within grant 033R126C.
 
 ## Status
 [![pipeline status](https://gitlab.com/cutevr/CuteVR/badges/master/pipeline.svg)](https://gitlab.com/cutevr/CuteVR/commits/master)
